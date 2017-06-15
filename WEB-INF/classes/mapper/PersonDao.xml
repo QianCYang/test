@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.soecode.lyf.dao.PersonDao" >
+	<insert  parameterType="com.soecode.lyf.entity.Person" id="insertPerson" useGeneratedKeys="true" keyProperty="id" >
+	insert into person
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+     
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="tellphone != null" >
+        tellphone,
+      </if>
+      <if test="dect != null" >
+        dect,
+      </if>
+
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="tellphone != null" >
+        #{tellphone,jdbcType=VARCHAR},
+      </if>
+      <if test="dect != null" >
+         #{dect,jdbcType=VARCHAR},
+      </if>
+    </trim>
+	</insert>
+</mapper>

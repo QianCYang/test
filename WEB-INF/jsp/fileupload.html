@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文件上传</title>
+</head>
+<script type="text/javascript" src="static/js/jQuery-2.1.4.min.js"></script>
+<script type="text/javascript" src="static/js/jquery.form.js"></script>
+<script type="text/javascript">
+
+    function upload(){
+        $("#fp").submit();
+    }
+
+</script>
+<body>
+
+<form enctype="multipart/form-data" method="post" id="fp" action="/hif">
+
+    <input type="file"/>
+
+</form>
+<input type="button" id="btn" onclick="upload()"/>
+
+</body>
+</html>
